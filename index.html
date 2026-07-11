@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李宗厚 - 个人主页</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text2: #64748b;
+    --blue: #0B6FAE;
+    --blue2: #103A5C;
+    --accent: #eaf4fa;
+    --border: #d9e8f2;
+    --radius: 14px;
+    --shadow: 0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+  a { color:var(--blue); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  .hero {
+    background: linear-gradient(135deg, #103A5C 0%, #0B6FAE 50%, #1a8fd4 100%);
+    color:#fff; padding:80px 24px 64px; text-align:center; position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; inset:0; opacity:.08;
+    background: radial-gradient(circle at 20% 50%, #fff 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, #fff 0%, transparent 40%);
+  }
+  .hero-content { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+  .hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:700; letter-spacing:-0.02em; }
+  .hero .subtitle { font-size:1.15rem; opacity:.9; margin-top:12px; font-weight:400; }
+  .hero .tags { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:24px; }
+  .hero .tag { background:rgba(255,255,255,.18); backdrop-filter:blur(4px); padding:6px 18px; border-radius:20px; font-size:.88rem; border:1px solid rgba(255,255,255,.25); }
+
+  .container { max-width:880px; margin:0 auto; padding:0 20px; }
+  section { margin:40px 0; }
+
+  .card { background:var(--card); border-radius:var(--radius); padding:32px; box-shadow:var(--shadow); border:1px solid var(--border); }
+  .card h2 { font-size:1.25rem; color:var(--blue2); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+  .card h2 .icon { font-size:1.3rem; }
+
+  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+  .info-item { display:flex; gap:8px; }
+  .info-item .label { color:var(--blue2); font-weight:600; white-space:nowrap; }
+  .info-item .value { color:var(--text2); }
+
+  .skill-tags { display:flex; flex-wrap:wrap; gap:8px; }
+  .skill-tag { background:var(--accent); color:var(--blue2); padding:6px 14px; border-radius:20px; font-size:.9rem; font-weight:500; }
+
+  .project { border-left:3px solid var(--blue); padding:16px 20px; margin:16px 0; background:var(--accent); border-radius:0 var(--radius) var(--radius) 0; }
+  .project h3 { color:var(--blue2); font-size:1.05rem; margin-bottom:6px; }
+  .project .meta { color:var(--text2); font-size:.85rem; margin-bottom:8px; }
+  .project ul { list-style:none; padding:0; }
+  .project li { padding:4px 0; font-size:.93rem; position:relative; padding-left:16px; }
+  .project li::before { content:'•'; color:var(--blue); position:absolute; left:0; font-weight:bold; }
+
+  .contest-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .contest-item { background:var(--accent); border-radius:var(--radius); padding:16px; }
+  .contest-item h4 { color:var(--blue2); font-size:.95rem; }
+  .contest-item p { font-size:.85rem; color:var(--text2); margin-top:4px; }
+
+  footer { text-align:center; padding:40px 20px; color:var(--text2); font-size:.85rem; }
+  footer a { color:var(--blue); }
+
+  @media (max-width:640px) {
+    .hero { padding:56px 16px 48px; }
+    .card { padding:20px; }
+  }
+
+  .back-top { position:fixed; bottom:24px; right:24px; width:44px; height:44px; background:var(--blue); color:#fff; border:none; border-radius:50%; font-size:1.2rem; cursor:pointer; opacity:0; transition:opacity .3s; box-shadow:0 2px 12px rgba(0,0,0,.15); z-index:99; }
+  .back-top.visible { opacity:1; }
+
+  .contact-links { display:flex; gap:16px; flex-wrap:wrap; }
+  .contact-link { display:inline-flex; align-items:center; gap:6px; background:var(--accent); padding:8px 16px; border-radius:8px; font-weight:500; transition:all .2s; }
+  .contact-link:hover { background:#d0e4f2; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>李宗厚</h1>
+    <p class="subtitle">AI 应用开发 · 大模型 Agent · 具身智能 | 哈尔滨工业大学（深圳）硕士在读</p>
+    <div class="tags">
+      <span class="tag">🤖 Agent 开发</span>
+      <span class="tag">📚 RAG 知识库</span>
+      <span class="tag">🦾 具身智能</span>
+      <span class="tag">🔬 AI+工程交叉</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ====== 基本信息 ====== -->
+<section>
+  <div class="card">
+    <h2><span class="icon">📋</span> 基本信息</h2>
+    <div class="info-grid">
+      <div class="info-item"><span class="label">学校：</span><span class="value">哈尔滨工业大学（深圳）</span></div>
+      <div class="info-item"><span class="label">专业：</span><span class="value">人工智能</span></div>
+      <div class="info-item"><span class="label">学历：</span><span class="value">硕士在读（2025.09 - 至今）</span></div>
+      <div class="info-item"><span class="label">本科：</span><span class="value">长沙理工大学 ·</span></div>
+      <div class="info-item"><span class="label">邮箱：</span><span class="value">2994172719@qq.com</span></div>
+      <div class="info-item"><span class="label">电话：</span><span class="value">17352839394</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 核心技能 ====== -->
+<section>
+  <div class="card">
+    <h2><span class="icon">🛠️</span> 核心技能</h2>
+    <div class="skill-tags">
+      <span class="skill-tag">Python</span><span class="skill-tag">PyTorch</span><span class="skill-tag">FastAPI</span>
+      <span class="skill-tag">RAG</span><span class="skill-tag">LangGraph</span><span class="skill-tag">ReAct Agent</span>
+      <span class="skill-tag">Function Calling</span><span class="skill-tag">Multi-Agent</span><span class="skill-tag">Docker</span>
+      <span class="skill-tag">Embedding</span><span class="skill-tag">BM25</span><span class="skill-tag">Hybrid Retrieval</span>
+      <span class="skill-tag">LoRA/QLoRA</span><span class="skill-tag">Transformer</span><span class="skill-tag">KV Cache</span>
+      <span class="skill-tag">ACT</span><span class="skill-tag">Diffusion Policy</span><span class="skill-tag">PPO/SAC</span>
+      <span class="skill-tag">MuJoCo</span><span class="skill-tag">Git</span><span class="skill-tag">Abaqus</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 项目经历 ====== -->
+<section>
+  <div class="card">
+    <h2><span class="icon">🚀</span> 项目经历</h2>
+
+    <div class="project">
+      <h3>硕士课题：基于RAG增强ReAct Agent的边坡智能系统</h3>
+      <p class="meta">哈尔滨工业大学（深圳） | 2025.09 - 至今</p>
+      <ul>
+        <li>设计"检测-推理-验证"三位一体端到端Agent系统，基于LangGraph+DeepSeek-V3搭建ReAct Agent</li>
+        <li>四维框架设计（Profile/Memory/Planning/Action），8步推理链+4类专有工具Function Calling</li>
+        <li>双模式架构：规则引擎Agent（<1秒）+ LLM ReAct Agent（30-60秒自主决策）</li>
+        <li>三Agent防偏误机制（Coder-Executor-Critic），LLM-Abaqus三层接口+最多3轮迭代优化闭环</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>轻量级RAG知识库问答系统 | 个人项目</h3>
+      <p class="meta">2026.05</p>
+      <ul>
+        <li>FastAPI端到端RAG应用：/ingest、/chat、/healthz接口</li>
+        <li>Hybrid Retrieval：Dense(0.6)+BM25(0.4)+RRF(k=60)+gte-rerank精排，HitRate@5达80%</li>
+        <li>多格式文档解析+答案后处理校验管线+Docker容器化部署</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>优必选ThinkerCosmos人形机器人挑战赛 | 核心算法开发</h3>
+      <p class="meta">2026.06 - 至今</p>
+      <ul>
+        <li>ACT（Action Chunking Transformer）+Diffusion Policy两种前沿算法PyTorch实现</li>
+        <li>MuJoCo仿真环境，完整5阶段工作流（数据采集→训练→Sim-to-Real→部署→评估）</li>
+        <li>ACT≈75%，Diffusion Policy≈82%，BC baseline≈55%</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>岸坡可靠度自动化分析软件 | 软件著作权已获批</h3>
+      <p class="meta">2026.01 - 2026.04</p>
+      <ul>
+        <li>融合Copula+M-H MCMC+子集模拟三种高级算法，50+脚本、10000+行代码</li>
+        <li>计算效率提升4个数量级（从1900年压缩到3天），全链路自动化</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 竞赛与培训 ====== -->
+<section>
+  <div class="card">
+    <h2><span class="icon">🏆</span> 竞赛与培训</h2>
+    <div class="contest-list">
+      <div class="contest-item">
+        <h4>🤖 优必选人形机器人挑战赛</h4>
+        <p>ACT + Diffusion Policy，MuJoCo仿真，Sim-to-Real</p>
+      </div>
+      <div class="contest-item">
+        <h4>🎨 字节跳动TRAE AI创造力大赛</h4>
+        <p>AI应用全栈开发，产品设计与快速原型</p>
+      </div>
+      <div class="contest-item">
+        <h4>🧠 Xbotics强化学习训练营</h4>
+        <p>PPO/SAC算法，倒立摆→机械臂→足式机器人</p>
+      </div>
+      <div class="contest-item">
+        <h4>🔬 AI大模型全栈训练营</h4>
+        <p>手写Transformer，LoRA/QLoRA微调，RAG系统开发</p>
+      </div>
+      <div class="contest-item">
+        <h4>📐 数学竞赛省一等奖</h4>
+        <p>本科期间获得，逻辑思维与数学基础</p>
+      </div>
+      <div class="contest-item">
+        <h4>💬 辩论协会会长</h4>
+        <p>4次校级+2次省级辩论赛，100+人/场</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 联系方式 ====== -->
+<section>
+  <div class="card">
+    <h2><span class="icon">📬</span> 联系方式</h2>
+    <div class="contact-links">
+      <a href="mailto:2994172719@qq.com" class="contact-link">📧 2994172719@qq.com</a>
+      <a href="tel:17352839394" class="contact-link">📱 17352839394</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 李宗厚 · 哈尔滨工业大学（深圳）</p>
+  <p style="margin-top:4px;">土木与环境工程学院 · 岩土工程智能化方向</p>
+</footer>
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+<script>
+  // Back to top button visibility
+  const btn = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
